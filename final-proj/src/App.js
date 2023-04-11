@@ -2,22 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const userLog = [
+    {
+      id: 'u1',
+      name: 'Obi Wan',
+      image:
+        'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
+    }
+  ]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div classname = "navBar">
+        <NavBar userLog/>
+      </div>
     </div>
   );
 }

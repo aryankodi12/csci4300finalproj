@@ -1,0 +1,23 @@
+.user-item{
+    background-color: rgb(73, 89, 101);
+    margin: 2rem auto;
+    width: 22rem;
+    height: auto;
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+.user-class-img{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-left: auto;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+}
+
+.user-class-name{
+    color: rgb(112, 207, 233);
+    margin-left: 10%;
+}
