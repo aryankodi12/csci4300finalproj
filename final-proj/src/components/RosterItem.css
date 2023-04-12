@@ -1,0 +1,24 @@
+.StatBlock{
+    background-color: #E8E5E5;
+    width: 90%;
+    margin-top: .5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns:.5fr 5fr 2fr 2fr 2fr 2fr .5fr;
+  }
+
+  .Roster-class-img{
+    padding: 1rem;
+    margin-left: 2.5rem;
+    
+  }
+
+  .Roster-class-name{
+    margin-left: 5rem;
+    text-align: left;
+  }
+  
+  h3{
+    text-align: center;
+  }

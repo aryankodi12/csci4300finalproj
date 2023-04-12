@@ -2,19 +2,6 @@
   text-align: center;
 }
 
-.StatHeader{
-  background-color: #D9D9D9;
-  width: 90%;
-  margin-top: 5rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: grid;
-  grid-template-columns:.5fr 5fr 2fr 2fr 2fr 2fr .5fr;
-}
-
-h4{
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;

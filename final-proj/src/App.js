@@ -1,4 +1,6 @@
 import NavBar from './Components/NavBar';
+import StatHead from './Components/StatHead';
+import Rosters from './Components/Rosters'
 import './App.css';
 
 function App() {
@@ -10,20 +12,26 @@ function App() {
         'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
     }
   ]
+
+  const dummyPlayer = [
+    {
+      name: 'Trae Young',
+      position: 'G',
+      height: '6\'1"',
+      age: '24',
+      image: 'https://secure.gravatar.com/avatar/15f8001624bd5b624aa2c00d0d25b1f4?s=168&d=mm&r=g',
+      school: 'University of Oklahoma'
+    }
+  ]
   
   return (
     <div>
       <div className = "navBar">
         <NavBar user_inst={userLog}/>
       </div>
-      <div className = "StatHeader">
-        <div className= "curveR"></div>
-        <h4>Player Name</h4>
-        <h4>Position</h4>
-        <h4>Height</h4>
-        <h4>Age</h4>
-        <h4>School</h4>
-        <div className= "curveL"></div>
+      <StatHead/>
+      <div className = "RosterSlots">
+        <Rosters roster_list={dummyPlayer}/>
       </div>
     </div>
   );
