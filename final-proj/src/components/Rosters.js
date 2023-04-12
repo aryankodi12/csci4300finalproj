@@ -5,7 +5,7 @@ function Rosters(props) {
         <div>
         {props.roster_list.map((i)=>{
             return (
-            <RosterItem age={i.age} name={i.name} image={i.image} height={i.height} school={i.school}/>
+            <RosterItem age={i.age} name={i.name} image={i.image} height={i.height} school={i.school} position={i.position}/>
           );})}
           </div>
     );
