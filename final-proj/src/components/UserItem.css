@@ -1,9 +1,9 @@
 .user-item{
     background-color: #F5921F;
     margin-top: .25rem;
-    margin-left: 0;
-    margin-right: 0;
-    width: 19rem;
+    margin-left: 10rem;
+    margin-right: .5rem;
+    width: 10rem;
     height: auto;
     max-width: 50%;
     display: grid;
