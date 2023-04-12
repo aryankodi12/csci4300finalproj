@@ -1,12 +1,13 @@
-import UserItem from './UserItem';
+import Users from './Users';
 import './NavBar.css';
 
+
 function NavBar(props) {
+    // const imgsrc = 'https://imgur.com/a/CUGHZIx'
     return(
-        <div classname ="contain">
-            <img src="src/resources/4300_Logo" alt="Roster Ready Logo"/>
-            <div></div>
-            <UserItem id={props.id} name={props.name} image={props.image}/>
+        <div className ="wrap">
+            <img className = "logo" src='https://i.imgur.com/xo4qwfm.png' alt="Roster Ready Logo"/>
+            <Users user_list={props.user_inst}/>
         </div>
     );
 }

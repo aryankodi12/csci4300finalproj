@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import NavBar from './Components/NavBar';
 import './App.css';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <div classname = "navBar">
-        <NavBar userLog/>
+        <NavBar user_inst={userLog}/>
       </div>
     </div>
   );

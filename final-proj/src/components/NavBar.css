@@ -1,8 +1,14 @@
-.contain{
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-}
-.body{
+.wrap{
     background-color: #DB7D48;
-    border-bottom-left-radius: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    border-bottom-left-radius: 25%;
+}
+
+.logo{
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
