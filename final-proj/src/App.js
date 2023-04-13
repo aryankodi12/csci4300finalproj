@@ -60,9 +60,16 @@ function App() {
   
   return (
     <div>
-      <h1>Player Roster App</h1>
-      <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
+      <div className = "navBar">
+        <NavBar user_inst={userLog}/>
+      </div>
+      <StatHead/>
       <Roster players={players} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
+      <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
+      {/* <div className = "RosterSlots">
+        <Rosters roster_list={dummyPlayer}/>
+      </div> */}
+    
       {editingPlayer && (
         <EditPlayer
           player={editingPlayer}
@@ -70,14 +77,6 @@ function App() {
           onDelete={() => setShowMessage(true)}
         />
       )}
-    <div>
-      <div className = "navBar">
-        <NavBar user_inst={userLog}/>
-      </div>
-      <StatHead/>
-      <div className = "RosterSlots">
-        <Rosters roster_list={dummyPlayer}/>
-      </div>
     </div>
   );
 }
