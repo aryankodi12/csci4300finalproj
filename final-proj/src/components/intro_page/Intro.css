@@ -1,0 +1,81 @@
+/* padding: 1rem;
+    background-color: rgb(73, 89, 101);
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%; */
+
+    .intro-card {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .intro-page {
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+         background-color: rgb(73, 89, 101);
+         margin: 10rem auto;
+         width: 50rem;
+        max-width: 95%;
+
+    }
+
+    .intro-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+
+    }
+
+    .intro-slogan {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+
+    }
+
+    .intro-image {
+        display: block;
+        background-color: rgba(0, 255, 255, 0.183);
+        flex-direction: row;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 20%;
+        padding: 50px;
+    }
+
+    .intro-sign-in {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 40px auto;
+        padding: 50px 75px;
+        font-size: 30px;
+        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+    }
+
+    .intro-guest-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        text-decoration: none;
+        color: black;
+    }
