@@ -5,7 +5,7 @@
     margin-left: 5%;
     margin-right: 5%;
     display: grid;
-    grid-template-columns:.5fr 5fr 2fr 2fr 2fr 2fr .5fr;
+    grid-template-columns: 1fr 3fr 1.5fr 2fr 2fr 2fr 2fr;
   }
 
   .Roster-class-img{
@@ -16,10 +16,26 @@
   }
 
   .Roster-class-name{
-    margin-left: 5rem;
+    margin-left: 1rem;
+    text-align: left;
+  }
+
+  .num{
+    text-align: left;
+  }
+
+  .pos{
+    margin-left: 4.5rem;
+    text-align: left;
+  }
+
+  .hei{
+    margin-left: 3.5rem;
+    text-align: left;
+  }
+
+  .age{
+    margin-left: 3.4rem;
     text-align: left;
   }
   
-  h3{
-    text-align: center;
-  }
