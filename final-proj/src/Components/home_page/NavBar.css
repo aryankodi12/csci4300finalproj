@@ -1,16 +1,24 @@
 .wrap{
+    background-color: white;
+    display: flex;
+    margin:0;
+}
+.curve{
+    background-color: #DB7D48;;
+    width: 5%;
+    height: 5rem;
+    border-bottom-left-radius: 100%;
+
+}
+.inner{
     background-color: #DB7D48;
     display: flex;
     justify-content: space-between;
     height: 5rem;
-    border-bottom-left-radius: 25%;
+    width: 100%;
 }
-
 .logo{
-    /* width: auto;
-    height: auto; */
-
-    width: 25% !important;
+    width: 15% !important;
     /* height:  !important; */
     margin: 0;
     padding: 0;
