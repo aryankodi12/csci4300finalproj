@@ -46,17 +46,6 @@ function App() {
         'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
     }
   ]
-
-  const dummyPlayer = [
-    {
-      name: 'Trae Young',
-      position: 'G',
-      height: '6\'1"',
-      age: '24',
-      image: 'https://secure.gravatar.com/avatar/15f8001624bd5b624aa2c00d0d25b1f4?s=168&d=mm&r=g',
-      school: 'University of Oklahoma'
-    }
-  ]
   
   return (
     <div>
@@ -66,9 +55,6 @@ function App() {
       <StatHead/>
       <Roster players={players} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
       <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
-      {/* <div className = "RosterSlots">
-        <Rosters roster_list={dummyPlayer}/>
-      </div> */}
     
       {editingPlayer && (
         <EditPlayer

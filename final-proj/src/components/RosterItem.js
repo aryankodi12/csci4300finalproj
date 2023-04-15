@@ -10,6 +10,7 @@ return (
         <h3 className="hei">{props.height}</h3>
         <h3 className="age">{props.age}</h3>
         <h3 className="school">{props.school}</h3>
+ 
     </div>
   );
 }

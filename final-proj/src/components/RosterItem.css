@@ -11,12 +11,15 @@
   .Roster-class-img{
     padding: 1rem;
     border-radius: 50%;
-    width: 5%;
+    width: 3rem;
     height: auto;
   }
 
   .Roster-class-name{
-    margin-left: 1rem;
+    margin-left: 2rem;
+    text-align: left;
+  }
+  .school{
     text-align: left;
   }
 
