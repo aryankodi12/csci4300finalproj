@@ -1,5 +1,7 @@
     body {
         margin: 100px auto;
+        background-color: #FDEEDC;
+
     }
 
     .signin-page {
@@ -16,12 +18,15 @@
         margin: 10rem auto;
         width: 50rem;
         max-width: 95%;
+        background-color: #D1512D;
+
 
     }
 
     .title {
         font-size: 40px;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+        /* background-color: #FDEEDC; */
 
     }
 
@@ -32,7 +37,9 @@
         /* justify-content: space-between; */
         gap: 23px;
         align-items: center;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+            /* background-color: #FDEEDC; */
+
 
     }
     
@@ -42,7 +49,10 @@
         width: 450px;
         height: 100px;
         font-size: 40px;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+        background-color: #FDEEDC;
+        border: #FDEEDC;
+
 
     }
     
@@ -54,7 +64,10 @@
         height: 100px;
         font-size: 40px;
         align-items: center;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+        background-color: #FDEEDC;
+        border: #FDEEDC;
+
 
     }
 
@@ -68,7 +81,11 @@
         width: 250px;
         align-items: center;
         font-size: 30px;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+        background-color: #FDEEDC;
+        color: black;
+        border: #FDEEDC;
 
     }
 
@@ -76,13 +93,16 @@
         display: flex;
         justify-content: center;
         /* width: 100px; */
-        background-color: rgba(73, 89, 101, 0.581);
-        margin: 25px auto;
+        margin: 25px 300px;
 
         height: 80px;
         width: 250px;
         align-items: center;
         font-size: 30px;
-        font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
 
+        background-color: #FDEEDC;
+        color: black;
+        border: #FDEEDC;
+        text-decoration: none;
     }

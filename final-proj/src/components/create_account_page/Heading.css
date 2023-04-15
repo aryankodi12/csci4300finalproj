@@ -6,22 +6,23 @@
     justify-content: space-around;
 
     padding: 1rem;
-    background-color: rgb(47, 193, 33);
     margin: 1rem auto;
     width: 35rem;
     max-width: 95%;
+
+    background-color: #FDEEDC;
+    color: black;
 
 }
 
 .logo {
     display: flex;
     width: 50%;
-    /* justify-content: left; */
 }
 
 .heading-title {
     display: flex;
-    font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
     justify-content: center;
     margin: auto ;
 }

@@ -32,7 +32,7 @@ function CreateAccount () {
 
                 {/* <button className="create-account-button" onClick={clickHandler}>Create Account</button> */}
 
-                <Link to="/create-account" className="icreate-account-button">Create Account</Link>
+                <Link to="/create-account" className="create-account-button">Create Account</Link>
 
 
             </Card>

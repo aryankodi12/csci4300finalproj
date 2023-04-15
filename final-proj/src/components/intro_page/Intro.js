@@ -20,8 +20,8 @@ function Intro () {
 
       <Card className="intro-page">
         <div>
-          <h2 className="intro-title">GROUP NAME</h2>
-          <h4 className="intro-slogan">MINI SOLOGAN</h4>
+          <h2 className="intro-title">GROUP R</h2>
+          <h4 className="intro-slogan">CREATE YOUR DREAM BASKETBALL TEAM</h4>
           <img className="intro-image" src="https://i.imgur.com/xo4qwfm.png" alt="image of logo"/>
 
           {/* <button className="intro-sign-in" onClick={clickHandler}>Sign In</button> */}
@@ -30,7 +30,7 @@ function Intro () {
 
           {/* <a className="intro-guest-link" href="">Continue as Guest</a> */}
 
-          <Link to="/create-account" className="intro-guest-link">Continue as guest</Link>
+          <Link to="/create-account" className="intro-create-account-link">Create Account</Link>
 
         </div>
 
