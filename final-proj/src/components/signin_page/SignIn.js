@@ -35,7 +35,8 @@ function SignIn() {
                     <input type="text" placeholder="Username" className='username'></input>
                     <input type="text" placeholder="Password" className='password'></input>
                     {/* <input type="submit" className='next-button'> NExt </input> */}
-                    <button type="submit" className='next-button' onClick={clickHandlerNext}> NEXT</button>
+                    {/* <button type="submit" className='next-button' onClick={clickHandlerNext}> NEXT</button> */}
+                    <Link to="/home" className='next-button'>Next</Link>
 
                 </form>
 
