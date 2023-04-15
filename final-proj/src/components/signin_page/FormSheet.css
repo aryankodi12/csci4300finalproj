@@ -1,0 +1,22 @@
+.user-input-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 23px;
+}
+
+.username {
+    width: 450px;
+    height: 100px;
+    font-size: 40px;
+}
+
+.password {
+    width: 450px;
+    height: 100px;
+    font-size: 40px;
+}
+
+/* .next-button {
+    
+} */
