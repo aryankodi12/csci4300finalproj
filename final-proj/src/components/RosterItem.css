@@ -16,7 +16,7 @@
   }
 
   .Roster-class-name{
-    margin-left: 2rem;
+    margin-left: 15%;
     text-align: left;
   }
   .school{
@@ -25,6 +25,7 @@
 
   .num{
     text-align: left;
+    margin-left: .7rem;
   }
 
   .pos{
@@ -38,7 +39,7 @@
   }
 
   .age{
-    margin-left: 3.4rem;
+    margin-left: 3.4rem; 
     text-align: left;
   }
   
