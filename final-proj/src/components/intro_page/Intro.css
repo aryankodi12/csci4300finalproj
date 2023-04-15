@@ -1,0 +1,96 @@
+body {
+    background-color: #FDEEDC;
+}
+
+
+/*
+#F5921F
+f0a249
+*/
+
+.intro-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-page {
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    background-color: #D1512D;
+    margin: 10rem auto;
+    width: 50rem;
+    max-width: 95%;
+
+}
+
+.intro-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Geneva", " Lucida Console", "Courier New", monospace;
+
+    color: #FDEEDC;
+
+}
+
+.intro-slogan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Geneva", " Lucida Console", "Courier New", monospace;
+     color: #FDEEDC;
+
+}
+
+.intro-image {
+    display: block;
+    background-color: #FDEEDC;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 35%;
+    padding: 50px;
+}
+
+.intro-sign-in {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 220px;
+    padding: 50px 40px;
+    font-size: 30px;
+    font-family: "Geneva", " Lucida Console", "Courier New", monospace;
+
+    background-color: #FDEEDC;
+    color: black;
+    text-decoration: none;
+}
+
+.intro-create-account-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 250px;
+    padding: 40px 30px;
+    font-size: 20px;
+
+    font-family: "Geneva", " Lucida Console", "Courier New", monospace;
+    text-decoration: none;
+    background-color: #FDEEDC;
+    color: black;
+
+}
