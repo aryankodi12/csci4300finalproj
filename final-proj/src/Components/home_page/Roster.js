@@ -1,14 +1,17 @@
 import React from 'react';
 import RosterItem from './RosterItem';
+import './Roster.css';
 
 function Roster({ players, onEdit, onDelete }) {
   return (
     <div>
       {players.map((player) => (
-        <div key={player.id}>
+        <div className="ButtonWrap" key={player.id}>
            <RosterItem age={player.age} name={player.name} number={player.number} image={player.picture} height={player.height} school={player.college} position={player.position}/>
-          <button onClick={() => onEdit(player)}>Edit</button>
-          <button onClick={() => onDelete(player.id)}>Delete</button>
+           <div className="StackButton">
+              <button className= "edB" onClick={() => onEdit(player)}>Edit</button>
+              <button className= "delB" onClick={() => onDelete(player.id)}>Delete</button>
+           </div>
         </div>
       ))}
     </div>

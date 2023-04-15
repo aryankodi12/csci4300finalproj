@@ -5,7 +5,6 @@ import EditPlayer from './EditPlayer';
 import DeletePlayer from './DeletePlayer';
 import NavBar from './NavBar';
 import StatHead from './StatHead';
-import Rosters from './Rosters';
 import React, { useState } from 'react';
 
 function HomePage () {
