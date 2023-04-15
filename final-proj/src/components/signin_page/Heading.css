@@ -1,0 +1,29 @@
+.heading-box {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 1rem;
+    background-color: #FDEEDC;
+    /* color: #FDEEDC; */
+    margin: 1rem auto;
+    width: 35rem;
+    max-width: 95%;
+
+}
+
+.logo {
+    display: flex;
+    width: 50% !important;
+    /* width: 40px;
+    height: 40px; */
+}
+
+.heading-title {
+    display: flex;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+    justify-content: center;
+    margin: auto ;
+}

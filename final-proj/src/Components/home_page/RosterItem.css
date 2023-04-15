@@ -1,0 +1,45 @@
+.StatBlock{
+    background-color: #E8E5E5;
+    width: 90%;
+    margin-top: .5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.5fr 2fr 2fr 2fr 2fr;
+  }
+
+  .Roster-class-img{
+    padding: 1rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: auto;
+  }
+
+  .Roster-class-name{
+    margin-left: 15%;
+    text-align: left;
+  }
+  .school{
+    text-align: left;
+  }
+
+  .num{
+    text-align: left;
+    margin-left: .7rem;
+  }
+
+  .pos{
+    margin-left: 4.5rem;
+    text-align: left;
+  }
+
+  .hei{
+    margin-left: 3.5rem;
+    text-align: left;
+  }
+
+  .age{
+    margin-left: 3.4rem; 
+    text-align: left;
+  }
+  

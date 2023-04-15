@@ -1,0 +1,102 @@
+body {
+    margin: 100px auto;
+    background-color: #FDEEDC;
+
+}
+
+.createaccount-page {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    background-color: rgb(73, 89, 101);
+    margin: 10rem auto;
+    width: 50rem;
+    max-width: 95%;
+
+    background-color: #D1512D;
+
+}
+
+.title {
+    font-size: 40px;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+    /* background-color: #FDEEDC; */
+
+}
+
+.user-input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-between; */
+    gap: 23px;
+    align-items: center;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+}
+
+.username {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    height: 100px;
+    font-size: 40px;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+    background-color: #FDEEDC;
+    color: black;
+
+
+}
+
+.password {
+    display: flex;
+    justify-content: center;
+
+    width: 450px;
+    height: 100px;
+    font-size: 40px;
+    align-items: center;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+    background-color: #FDEEDC;
+
+}
+
+/* .next-button {
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    margin: 25px;
+
+    height: 80px;
+    width: 250px;
+    align-items: center;
+    font-size: 30px;
+    font-family: "Monaco" , " Lucida Console", "Courier New", monospace;
+
+} */
+
+.create-account-button {
+    display: flex;
+    justify-content: center;
+ 
+    margin: 40px auto;
+
+    height: 80px;
+    width: 250px;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+
+    background-color: #FDEEDC;
+    color: black;
+
+}
