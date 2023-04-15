@@ -1,0 +1,22 @@
+.StatHeader{
+    background-color: #D9D9D9;
+    width: 90%;
+    margin-top: 5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns:.5fr 2.5fr 2.5fr 2fr 2fr 2fr 2fr .5fr;
+  }
+  
+h4{
+    text-align: center;
+ }
+
+.HeadName{
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.numb{
+  margin-left: 1.5rem;
+}
