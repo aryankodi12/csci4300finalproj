@@ -12,4 +12,22 @@ input{
 form{
     display: flex;
     flex-direction: column;
+    margin: 5%;
+}
+.addHead{
+    background-color: #DB7D48;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    margin: 0;
+    padding:0;
+}
+.addText{
+    color: white;
+    margin:0;
+    text-align: center;
+    height: 2rem;
+}
+.body{
+    margin:0;
+    padding:0;
 }

@@ -5,41 +5,43 @@
     margin-left: 5%;
     margin-right: 5%;
     display: grid;
-    grid-template-columns: 1fr 3fr 1.5fr 2fr 2fr 2fr 2fr;
+    /* grid-template-columns: 1fr 3fr 1.5fr 2fr 2fr 2fr 2fr; */
+    grid-template-columns: 1fr 2.5fr 2.5fr 1.8fr 2fr 1fr 3fr;
   }
 
   .Roster-class-img{
     padding: 1rem;
     border-radius: 50%;
+    margin-left: 1.5rem;
     width: 3rem;
-    height: auto;
+    height: 3rem;
   }
 
   .Roster-class-name{
-    margin-left: 15%;
+    margin-left: 5%;
     text-align: left;
   }
   .school{
-    text-align: left;
+    text-align: center;
+    margin-left:0;
   }
 
   .num{
     text-align: left;
-    margin-left: .7rem;
+    margin-left: 3.5rem;
   }
 
   .pos{
-    margin-left: 4.5rem;
+    margin-left: 2rem;
     text-align: left;
   }
 
   .hei{
-    margin-left: 3.5rem;
+    margin-left: 2.2rem;
     text-align: left;
   }
 
   .age{
-    margin-left: 3.4rem; 
     text-align: left;
   }
   

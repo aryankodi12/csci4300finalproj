@@ -22,6 +22,9 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit }) {
   
     return (
       <div className ="forms">
+        <div className="addHead">
+          <h3 className="addText">Add Player</h3>
+        </div>
         <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
