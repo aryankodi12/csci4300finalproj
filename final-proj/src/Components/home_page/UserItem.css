@@ -9,7 +9,15 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
   }
-
+.uWrap{
+    display: flex;
+    flex-direction: column;
+}
+.log-out{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: .4rem;
+}
 .user-class-img{
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -22,4 +30,6 @@
 .user-class-name{
     color: rgb(255, 253, 253);
     margin-left: 10%;
+    margin-top:.8rem;
+    margin-bottom: .1rem;
 }
