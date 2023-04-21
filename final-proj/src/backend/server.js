@@ -29,12 +29,34 @@ app.post('/create-account', async (req, res) => {
       school: req.body.school,
     });
     await newPlayer.save();
-    res.status(201).json(newPlayer);
+    res.redirect('/sign-in');
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+app.post('/sign-in', async (req, res) => {
+  try {
+    const player = await Player.findOne({
+      username: req.body.username,
+      password: req.body.password
+    });
+    if (player) {
+      res.redirect('/home');
+    } else {
+      res.status(401).json({ message: 'Incorrect username or password' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

@@ -11,31 +11,31 @@ const playerSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true
+    required: false
   },
   name: {
     type: String,
-    required: true
+    required: false
   },
   number: {
     type: Number,
-    required: true
+    required: false
   },
   position: {
     type: String,
-    required: true
+    required: false
   },
   height: {
     type: String,
-    required: true
+    required: false
   },
   age: {
     type: Number,
-    required: true
+    required: false
   },
   school: {
     type: String,
-    required: true
+    required: false
   }
 });
 
