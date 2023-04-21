@@ -31,3 +31,30 @@ form{
     margin:0;
     padding:0;
 }
+
+
+/* Add this to your PlayerForm.css file */
+
+button {
+    margin-top: 10px;
+    background-color: #DB7D48;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #4c5055;
+  }
+  
+  /* button.delete {
+    background-color: #e74c3c;
+  } */
+  
+  /* button.delete:hover {
+    background-color: #c0392b;
+  } */
+  

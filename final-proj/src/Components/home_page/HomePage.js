@@ -53,16 +53,15 @@ function HomePage () {
             <StatHead/>
             <Roster players={players} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
             <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
-        
+            
             {editingPlayer && (
-                <EditPlayer
-                player={editingPlayer}
-                onSubmit={handleSavePlayer}
-                onDelete={() => setShowMessage(true)}
-                />
+              <div className="formsWrapper">
+                <PlayerForm onSubmit={handleSavePlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
+                <EditPlayer player={editingPlayer} onSubmit={handleSavePlayer} onDelete={() => setShowMessage(true)} />
+              </div>
             )}
         </div>
     );
 }
 
-export default HomePage
+export default HomePage;

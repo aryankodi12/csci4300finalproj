@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
+
 
 function EditPlayer(props) {
   const { player, onSubmit, onCancel } = props;
@@ -14,19 +17,30 @@ function EditPlayer(props) {
   };
 
   // Handle save button click
-  const handleSave = () => {
-    onSubmit(editedPlayer);
-    setShowForm(false);
+  // const handleSave = () => {
+  //   onSubmit(editedPlayer);
+  //   setShowForm(false);
+  // };
+
+
+  const handleSave = async () => {
+    try {
+      const response = await axios.put(`/api/players/${player.id}`, editedPlayer);
+      onSubmit(response.data);
+      setShowForm(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   // Handle cancel button click
-  const handleCancel = () => {
-    setShowForm(false);
-    onCancel();
-  };
+  // const handleCancel = () => {
+  //   setShowForm(false);
+  //   onCancel();
+  // };
   
   return (
-    <div>
+    <div className="edit-form">
       {showForm && (
         <div>
           <h2>Edit Player</h2>
