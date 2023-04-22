@@ -2,12 +2,14 @@ const express = require('express');
 const app = express.Router();
 
 
-const { Player } = require('../../model/schema.js');
+var Player = require('../../model/schema.js');
 
 
 // create account and then stored to db
 app.post('/create-account', async (req, res) => {
+  console.log('Accepting post for create-account...')
   try {
+    
     const newPlayer = new Player({
       username: req.body.username,
       password: req.body.password,
@@ -19,8 +21,12 @@ app.post('/create-account', async (req, res) => {
       // age: req.body.age,
       // school: req.body.school,
     });
-    await newPlayer.save();
-    res.redirect('/sign-in');
+    await newPlayer.save().then( (p) => {
+      console.log(p);
+      res.json(p);
+    });
+
+    
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

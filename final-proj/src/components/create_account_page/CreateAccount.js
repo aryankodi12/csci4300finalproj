@@ -13,7 +13,7 @@ function CreateAccount () {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const response = await axios.post('http://localhost:8082/create-account', {
+          const response = await axios.post('http://localhost:8082/api/back/create-account', {
             username,
             password,
             image: '',
