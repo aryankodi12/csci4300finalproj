@@ -65,7 +65,7 @@ app.get('/home', async (req, res) => {
 });
 
 // adding new player to roster
-app.post('/api/roster', async (req, res) => {
+app.post('/api/back/roster', async (req, res) => {
   try {
     const { username, password } = req.body;
     const player = await Player.findOne({ username, password });

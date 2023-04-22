@@ -13,7 +13,11 @@ import React, { useState } from 'react';
 
 function App() {
 
-  
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const handleLogin = (user) => {
+    setCurrentUser(user);
+  };
   
   
   return (
@@ -24,7 +28,7 @@ function App() {
             <Route exact path='/sign-in' element={<SignIn />}/>
             <Route exact path='/create-account' element={<CreateAccount />}/>
             <Route exact path='*' element={<ErrorPage />}/>
-            <Route exact path='/home' element={<HomePage/>}/>
+            <Route exact path='/home' element={<HomePage currentUser={currentUser}/>}/> 
           </Routes>
         </div>
       </Router>

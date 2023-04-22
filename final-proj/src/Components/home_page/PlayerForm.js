@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './PlayerForm.css';
 
-function PlayerForm({ onSubmit, onDelete, player, onEdit }) {
+function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
   const [name, setName] = useState(player?.name || '');
   const [number, setNumber] = useState(player?.number || '');
   const [college, setCollege] = useState(player?.college || '');
@@ -28,19 +28,32 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit }) {
   //   onSubmit({ name, number, college, height, age, picture, position });
   //   resetForm();
   // };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const playerData = { name, number, college, height, age, picture: pictureUrl, position };
-  
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post('/api/players', playerData);
-      console.log(response.data);
-      onSubmit(response.data);
+      await axios.post('http://localhost:8082/api/back/roster', {
+        picture: picture,
+        name: name,
+        number: number,
+        position: position,
+        height: height,
+        age: age,
+        college: college,
+      });
+      // Clear form fields
+      onSubmit({ name, number, college, height, age, picture, position });
       resetForm();
+      // Display success message to user
+      alert('Player created successfully');
     } catch (error) {
       console.error(error);
+      // Display error message to user
+      alert('An error occurred while creating the player');
     }
-  };
+  }
+  
+
+  
   
 
   // const handleDelete = () => {
