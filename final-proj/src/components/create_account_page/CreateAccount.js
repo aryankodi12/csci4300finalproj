@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Card from './Card.js';
 import Heading from './Heading.js';
 import axios from 'axios';
-import { createAccount } from '../../backend/api';
+
 
 
 function CreateAccount () {
@@ -13,16 +13,25 @@ function CreateAccount () {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/create-account', {
-                username,
-                password
-            });
-            console.log(response.data);
-            // Redirect the user to the home page
+          const response = await axios.post('http://localhost:3000/create-account', {
+            username,
+            password,
+            image: '',
+            name: '',
+            number: '',
+            position: '',
+            height: '',
+            age: '',
+            school: '',
+          });
+          console.log(response.data);
+          // Redirect the user to the home page
+          window.location.href = '/sign-in';
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
-    };
+      };
+      
 
     return (
         <div className='createaccount-card'>
@@ -52,3 +61,5 @@ function CreateAccount () {
 }
 
 export default CreateAccount;
+
+

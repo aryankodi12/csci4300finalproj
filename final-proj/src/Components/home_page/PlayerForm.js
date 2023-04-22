@@ -43,8 +43,17 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit }) {
   };
   
 
-  const handleDelete = () => {
-    onDelete();
+  // const handleDelete = () => {
+  //   onDelete();
+  // };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/api/players/${player.id}`);
+      onDelete();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handlePictureChange = async (e) => {
