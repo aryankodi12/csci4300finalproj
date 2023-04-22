@@ -75,29 +75,33 @@ function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/sign-in', {
+      const response = await axios.post('http://localhost:8082/sign-in', {
         username,
         password,
       });
-      console.log(response.data);
-      // Set the user's attributes in some kind of state or context
-      // You could use something like Redux or React Context for this
-      // Here we're just passing them as query parameters to the home page URL
-      const queryParams = new URLSearchParams({
-        username: response.data.username,
-        image: response.data.image,
-        name: response.data.name,
-        number: response.data.number,
-        position: response.data.position,
-        height: response.data.height,
-        age: response.data.age,
-        school: response.data.school,
-      });
+      if (response.status === 200) { // Check for 200 status code
+        const playerData = response.data;
+        const queryParams = new URLSearchParams({
+          username: playerData.username,
+          image: playerData.image,
+          name: playerData.name,
+          number: playerData.number,
+          position: playerData.position,
+          height: playerData.height,
+          age: playerData.age,
+          school: playerData.school,
+        });
+        window.location.href = `/home?${queryParams.toString()}`;
+      } else {
+        setErrorMessage('Invalid username or password');
+      }
     } catch (error) {
       console.log(error);
-      setErrorMessage('Invalid username or password');
+      setErrorMessage('Server error123');
     }
   };
+  
+  
 
   return (
     <div className="signin-card">
