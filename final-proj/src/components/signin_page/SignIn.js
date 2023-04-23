@@ -79,19 +79,11 @@ function SignIn() {
         username,
         password,
       });
-      if (response.status === 200) { // Check for 200 status code
+      if (response.status === 200) {
         const playerData = response.data;
-        const queryParams = new URLSearchParams({
-          username: playerData.username,
-          image: playerData.image,
-          name: playerData.name,
-          number: playerData.number,
-          position: playerData.position,
-          height: playerData.height,
-          age: playerData.age,
-          school: playerData.school,
-        });
-        window.location.href = `/home?${queryParams.toString()}`;
+        localStorage.setItem('token', playerData.token);
+        console.log(playerData.token);
+        window.location.href = `/home?userId=${playerData.userId}`; // Redirect to home page with userId query parameter
       } else {
         setErrorMessage('Invalid username or password');
       }
@@ -100,6 +92,12 @@ function SignIn() {
       setErrorMessage('Server error123');
     }
   };
+
+  
+  
+  
+  
+  
   
   
 

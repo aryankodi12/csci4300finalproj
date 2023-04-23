@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const User = require("../backend/model/schema");
 
 const authentication = async (req, res, next) => {
     try {
@@ -16,8 +17,14 @@ const authentication = async (req, res, next) => {
                 .json({ msg: "Token verification failed, authorization denided"});
         }
 
-        //since token was made out of the documanet id
-        req.user = verified.id;
+        const user = await User.findById(verified.id);
+        if (!user) {
+            return res
+                .status(401)
+                .json({ msg: "User not found, access denied" });
+        }
+
+        req.user = user;
         next();
 
     } catch (err) {

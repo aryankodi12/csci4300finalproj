@@ -1,8 +1,14 @@
 import React from 'react';
+import axios from 'axios';
 
 function Delete({ onDelete, player }) {
-  const handleDelete = () => {
-    onDelete();
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/api/players/${player.id}`);
+      //onDelete();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

@@ -17,7 +17,7 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
     setNumber('');
     setCollege('');
     setHeight('');
-    setAge('');
+    setAge('');     
     setPicture('');
     setPictureUrl('');
     setPosition('');
@@ -31,6 +31,8 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      const token = localStorage.getItem('token'); // Retrieve authentication token from local storage
+      console.log(token); // Log the token value
       await axios.post('http://localhost:8082/api/back/roster', {
         picture: picture,
         name: name,
@@ -39,6 +41,10 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
         height: height,
         age: age,
         college: college,
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`, // Set authentication token in headers
+        },
       });
       // Clear form fields
       onSubmit({ name, number, college, height, age, picture, position });
@@ -52,6 +58,7 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
     }
   }
   
+  
 
   
   
@@ -63,7 +70,7 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
   const handleDelete = async () => {
     try {
       await axios.delete(`/api/players/${player.id}`);
-      onDelete();
+      //onDelete();
     } catch (error) {
       console.error(error);
     }

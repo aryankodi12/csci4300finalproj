@@ -1,12 +1,13 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const User = require('../backend/model/schema');
 const authentication = require('../backend/authentication');
 const router = express.Router();
 
+
 // Registration route
-router.post('/register', async (req, res) => {
+router.post('/create-account', async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -28,7 +29,7 @@ router.post('/register', async (req, res) => {
 });
 
 // Login route
-router.post('/login', async (req, res) => {
+router.post('/sign-in', async (req, res) => {
   try {
     const { username, password } = req.body;
 
