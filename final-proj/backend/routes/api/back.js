@@ -206,7 +206,7 @@ app.put('/:_id', async (req, res) => {
     player.position = req.body.position || player.position;
     player.height = req.body.height || player.height;
     player.age = req.body.age || player.age;
-    player.school = req.body.school || player.school;
+    player.college = req.body.college || player.college;
     await player.save();
     res.status(200).json(player);
   } catch (err) {
