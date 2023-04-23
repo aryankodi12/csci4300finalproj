@@ -88,15 +88,35 @@ app.get('/home', async (req, res) => {
     const userId = req.query.userId;
 
     // Find user in MongoDB
-    const user = await Player.findById(userId);
+    const user = await Player.find();
 
-    res.render('home', { user });
+    //res.render('home', { user });
+    console.log(user);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error loading home page');
   }
 });
 
+
+
+/**
+ * GET : player-roster
+ * @returns: list of players from the database
+ */
+app.get('/player-roster', async (req, res) => {
+  try {
+    // Get user ID from query parameter
+    const userId = req.query.userId;
+
+    // Find user in MongoDB
+    const roseter = await Player.find({'user': userId});
+    res.json(roseter);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error getting list of players.  roster');
+  }
+});
 
 
 

@@ -5,12 +5,45 @@ import EditPlayer from './EditPlayer';
 import DeletePlayer from './DeletePlayer';
 import NavBar from './NavBar';
 import StatHead from './StatHead';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function HomePage () {
     const [players, setPlayers] = useState([]);
     const [editingPlayer, setEditingPlayer] = useState(null);
     const [showMessage, setShowMessage] = useState(false);
+    const [playerRoster, setPlayerRoster] = useState([]);
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    // Read this from the url using searchParams or Query params
+    // const currentUserId = '644568963abe684d85a4eb71';    
+    // const currentUserId = null;
+    const currentUserId = urlParams.get('userId');
+    
+    useEffect(() => {
+        const getRoster = async () => {
+
+            if ( !currentUserId )
+                return;
+            const token = localStorage.getItem('token'); // Retrieve authentication token from local storage
+            console.log(token); // Log the token value
+            const players = await axios.get(`http://localhost:8082/api/back/player-roster?userId=${currentUserId}`, {
+              headers: {
+                Authorization: `Bearer ${token}`, // Set authentication token in headers
+              },
+            }).then ((playerRoster) => {
+                setPlayerRoster(playerRoster?.data || []);
+            }).catch( (error ) => {
+                console.log(error);
+            });
+        };
+
+        getRoster();
+    
+    }, currentUserId);
+    
+
 
     const handleAddPlayer = (player) => {
         setPlayers([...players, { id: Date.now(), ...player }]);
@@ -51,7 +84,12 @@ function HomePage () {
                 <NavBar user_inst={userLog}/>
             </div>
             <StatHead/>
+            
             <Roster players={players} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
+
+
+            <Roster players={playerRoster} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
+            
             <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
             
             {editingPlayer && (
