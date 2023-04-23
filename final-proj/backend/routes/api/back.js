@@ -135,7 +135,7 @@ app.post('/roster', auth1, async (req, res) => {
       college,
       height,
       age,
-      picture,
+      picture: picture.trim(), // save the picture URL as a string and remove any whitespace
       position,
       user: userId, // associate the new player with the authenticated user
     });
