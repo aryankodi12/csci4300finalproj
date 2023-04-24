@@ -144,9 +144,6 @@ app.post('/roster', auth1, async (req, res) => {
 
 
 
-
-
-
 // deleting player from roster
 app.delete('/:id', async (req, res) => {
   console.log("Handling delete request....");

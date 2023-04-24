@@ -26,10 +26,13 @@ function EditPlayer(props) {
   const handleSave = async () => {
     try {
       console.log(`Sending PUT request to update player with id ${player._id} with data:`, editedPlayer);
-      const response = await axios.put(`http://localhost:8082/api/back/${player._id}`, editedPlayer);
-      console.log(`PUT request to update player with id ${player._id} successful. Response data:`, response.data);
-      onSubmit(response.data);
-      setShowForm(false);
+      await axios.put(`http://localhost:8082/api/back/${player._id}`, editedPlayer)
+        .then( (resp) => {
+          console.log(`PUT request to update player with id ${player._id} successful. Response data:`, resp.data);
+          onSubmit(resp.data);
+          //setShowForm(false);
+        });
+      
     } catch (error) {
       console.error(error);
     }
