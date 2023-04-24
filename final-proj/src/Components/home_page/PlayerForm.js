@@ -49,7 +49,7 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
         console.log(response);
         const newPlayer = response.data.player;
         onSubmit({newPlayer});
-        alert('Player created successfully ' + newPlayer._id);
+        // alert('Player created successfully ' + newPlayer._id);
         // Clear form fields
         resetForm();
       });

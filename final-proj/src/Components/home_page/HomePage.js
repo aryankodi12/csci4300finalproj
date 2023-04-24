@@ -61,14 +61,15 @@ function HomePage () {
     };
 
     const handleSavePlayer = (updatedPlayer) => {
-        const updatedPlayers = players.map((player) => {
-        if (player.id === updatedPlayer.id) {
-            return updatedPlayer;
+        const playerIndex = players.findIndex( (updatedPlayer) => {
+            return editingPlayer._id === updatedPlayer._id;
+        })
+        if ( playerIndex >= 0) {
+            players[playerIndex] = updatedPlayer;
+            const updatedPlayersList = Object.assign(players);
+            setPlayers(updatedPlayersList);
+            setEditingPlayer(null)
         }
-        return player;
-        });
-        setPlayers(updatedPlayers);
-        setEditingPlayer(null);
     };
 
     const handleDeletePlayer = async (_id) => {
@@ -113,8 +114,6 @@ function HomePage () {
             <StatHead/>
             
             <Roster players={players} onEdit={setEditingPlayer} onDelete={(x) => handleDeletePlayer(x)} />
-            
-            
             <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
             
             {editingPlayer && (
