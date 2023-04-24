@@ -8,6 +8,21 @@
     font-size: 1.5em;
     margin-bottom: 20px;
   }
+
+  .edHead{
+    background-color: #DB7D48;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    margin: 0;
+    padding:0;
+  }
+
+  .edText{
+    color: white;
+    margin:0;
+    text-align: center;
+    height: 2rem;
+  }
   
   .edit-form label {
     display: block;

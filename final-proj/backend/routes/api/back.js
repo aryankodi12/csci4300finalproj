@@ -168,9 +168,14 @@ app.delete('/:id', async (req, res) => {
 // making any edits to the player roster
 const mongoose = require('mongoose');
 
-app.put('/:_id', async (req, res) => {
+app.put('/:id', async (req, res) => {
+  // Player.findByIdAndUpdate(req.params.id, req.body)
+  //   .then((Player) => res.json({msg: 'updated successfully'}))
+  //   .catch((err) =>
+  //     res.status(400).json({error: 'Unable to update database'})
+  //     );
   console.log('PUT request received');
-  const _id = req.params._id;
+  const _id = req.params.id;
   console.log('PUT request received for player with _id:', _id);
   try {
     const player = await Player.findById(_id);

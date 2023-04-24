@@ -46,8 +46,8 @@ function EditPlayer(props) {
   return (
     <div className="edit-form">
       {showForm && (
-        <div>
-          <h2>Edit Player</h2>
+        <div className="edHead">
+          <h2 className="edText">Edit Player</h2>
           <form>
             <div>
               <label htmlFor="name">Name:</label>
