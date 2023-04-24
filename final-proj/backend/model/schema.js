@@ -14,7 +14,7 @@ const playerSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  image: {
+  picture: {
     type: String,
     required: false
   },
@@ -38,7 +38,7 @@ const playerSchema = new mongoose.Schema({
     type: Number,
     required: false
   },
-  school: {
+  college: {
     type: String,
     required: false
   }

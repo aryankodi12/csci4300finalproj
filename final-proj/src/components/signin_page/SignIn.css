@@ -106,3 +106,15 @@
         border: #FDEEDC;
         text-decoration: none;
     }
+
+
+    .app-button {
+        height: 80px;
+        width: 250px;
+        font-family: "Geneva" , " Lucida Console", "Courier New", monospace;
+        background-color: #FDEEDC;
+        color: black;
+        border: #FDEEDC;
+        text-decoration: none;
+        margin:1rem;
+    }

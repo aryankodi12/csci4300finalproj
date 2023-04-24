@@ -45,18 +45,21 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
         headers: {
           Authorization: `Bearer ${token}`, // Set authentication token in headers
         },
+      }).then( (response) => {
+        console.log(response);
+        const newPlayer = response.data.player;
+        onSubmit({newPlayer});
+        alert('Player created successfully ' + newPlayer._id);
+        // Clear form fields
+        resetForm();
       });
-      // Clear form fields
-      onSubmit({ name, number, college, height, age, picture, position });
-      resetForm();
-      // Display success message to user
-      alert('Player created successfully');
     } catch (error) {
       console.error(error);
       // Display error message to user
       alert('An error occurred while creating the player');
     }
   }
+  
   
   
 
@@ -69,27 +72,19 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/players/${player.id}`);
+      await axios.deleteOne(`http://localhost:8082/api/back/${player.id}`);
       //onDelete();
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handlePictureChange = async (e) => {
-    const file = e.target.files[0];
-    setPicture(file);
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      const response = await axios.post('/api/upload', formData);
-      setPictureUrl(response.data.url);
-    } catch (error) {
-      console.error(error);
-    }
+  const handlePictureChange = (e) => {
+    const url = e.target.value;
+    setPictureUrl(url);
+    setPicture('');
   };
+  
 
   return (
     <div className ="forms">
@@ -112,8 +107,8 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
         <label htmlFor="age">Age:</label>
         <input type="text" id="age" value={age} onChange={(e) => setAge(e.target.value)} />
 
-        <label htmlFor="picture">Picture:</label>
-        <input type="file" id="picture" onChange={handlePictureChange} />
+        <label htmlFor="picture">Picture (url):</label>
+        <input type="text" id="picture" onChange={(e) => setPicture(e.target.value)} />
         {pictureUrl && <img className="player-image" src={pictureUrl} alt="uploaded file" />}
 
         <label htmlFor="position">Position:</label>

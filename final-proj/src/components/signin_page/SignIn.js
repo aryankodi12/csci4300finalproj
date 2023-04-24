@@ -70,6 +70,9 @@ import axios from 'axios';
 function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [ loggedInUser, setLoggedInUser] = useState({});
+  
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
@@ -80,16 +83,16 @@ function SignIn() {
         password,
       });
       if (response.status === 200) {
-        const playerData = response.data;
-        localStorage.setItem('token', playerData.token);
-        console.log(playerData.token);
-        window.location.href = `/home?userId=${playerData.userId}`; // Redirect to home page with userId query parameter
+        const userData = response.data;
+        localStorage.setItem('token', userData.token);
+        console.log(userData.token);
+        window.location.href = `/home?userId=${userData.user.id}`; // Redirect to home page with userId query parameter
       } else {
         setErrorMessage('Invalid username or password');
       }
     } catch (error) {
       console.log(error);
-      setErrorMessage('Server error123');
+      setErrorMessage('Invalid Username/Password');
     }
   };
 
@@ -121,9 +124,14 @@ function SignIn() {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button type="submit" className="next-button">
-            NEXT
-          </button>
+          <div class="app-panel">
+            <button type="submit" className="app-button">
+              SIGN-IN
+            </button>
+            <button type="button" className="app-button">
+              REGISTER
+            </button>
+          </div>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </form>
       </Card>
