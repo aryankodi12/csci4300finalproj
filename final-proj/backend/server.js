@@ -1,12 +1,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-
-
 const players = require('./routes/api/back');
 const app = express();
-
-
 
 // Connect Database
 connectDB();
