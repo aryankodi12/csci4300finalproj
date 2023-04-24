@@ -63,8 +63,6 @@ app.post('/sign-in', async (req, res) => {
 });
 
 
-
-
 const auth1 = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
@@ -79,7 +77,6 @@ const auth1 = async (req, res, next) => {
     res.status(401).json({ message: 'Token is not valid' });
   }
 };
-
 
 // displaying all players on user's roster
 app.get('/home', async (req, res) => {
@@ -119,11 +116,6 @@ app.get('/player-roster', async (req, res) => {
 });
 
 
-
-
-
-
-
 app.post('/roster', auth1, async (req, res) => {
   try {
     const { name, number, college, height, age, picture, position } = req.body;
@@ -139,8 +131,10 @@ app.post('/roster', auth1, async (req, res) => {
       position,
       user: userId, // associate the new player with the authenticated user
     });
-    await newPlayer.save();
-    res.status(201).json({ message: 'Player created successfully', player: newPlayer }); // send the new player object in the response
+    await newPlayer.save().then( (p) => { 
+      res.status(201).json({ message: 'Player created successfully', player: newPlayer }); // send the new player object in the response
+    });
+    
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error creating player' });
@@ -155,21 +149,29 @@ app.post('/roster', auth1, async (req, res) => {
 
 // deleting player from roster
 app.delete('/:id', async (req, res) => {
+  console.log("Handling delete request....");
+  console.log(req);
+
   try {
     const id = req.params.id;
-    const token = req.cookies.token;
-    const decodedToken = jwt.verify(token, 'secret-key');
-    const userId = decodedToken.userId;
+    // const _id = req.params._id;
+    // const token = req.authorization;
+    // const decodedToken = jwt.verify(token, 'secret-key');
+    // const userId = decodedToken.userId;
     
     // Find the player to delete based on the given id and the user's ID
-    const player = await Player.findOne({ _id: id, user: userId });
+    // const player = await Player.findOne({ _id: id, user: userId });
+    const player = await Player.findById(id);
+    console.log(player);
     if (!player) {
       // If the player was not found or does not belong to the user, return an error
       return res.status(404).json({ error: 'Player not found' });
     }
     
     // Delete the player from the database
-    const result = await player.delete();
+    const result = await player.deleteOne();
+    // await player.deleteOne();
+
     if (result.deletedCount === 0) {
       // If no rows were deleted, it means there was an error deleting the player
       return res.status(500).json({ error: 'Error deleting player' });

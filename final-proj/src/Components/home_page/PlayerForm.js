@@ -45,12 +45,14 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
         headers: {
           Authorization: `Bearer ${token}`, // Set authentication token in headers
         },
+      }).then( (response) => {
+        console.log(response);
+        const newPlayer = response.data.player;
+        onSubmit({newPlayer});
+        alert('Player created successfully ' + newPlayer._id);
+        // Clear form fields
+        resetForm();
       });
-      // Clear form fields
-      onSubmit({ name, number, college, height, age, picture: pictureUrl, position });
-      resetForm();
-      // Display success message to user
-      alert('Player created successfully');
     } catch (error) {
       console.error(error);
       // Display error message to user
@@ -70,7 +72,7 @@ function PlayerForm({ onSubmit, onDelete, player, onEdit, currentUser}) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/players/${player.id}`);
+      await axios.deleteOne(`http://localhost:8082/api/back/${player.id}`);
       //onDelete();
     } catch (error) {
       console.error(error);

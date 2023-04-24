@@ -2,17 +2,22 @@ import './HomePage.css';
 import PlayerForm from './PlayerForm';
 import Roster from './Roster';
 import EditPlayer from './EditPlayer';
-import DeletePlayer from './DeletePlayer';
 import NavBar from './NavBar';
 import StatHead from './StatHead';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_BASE_URL = 'http://localhost:8082/api/back'
+
+
 function HomePage () {
     const [players, setPlayers] = useState([]);
+    // const [playerRoster, setPlayerRoster] = useState([]);
+
+
     const [editingPlayer, setEditingPlayer] = useState(null);
     const [showMessage, setShowMessage] = useState(false);
-    const [playerRoster, setPlayerRoster] = useState([]);
+    
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -21,23 +26,24 @@ function HomePage () {
     // const currentUserId = null;
     const currentUserId = urlParams.get('userId');
     
-    useEffect(() => {
-        const getRoster = async () => {
+    const getRoster = async () => {
 
-            if ( !currentUserId )
-                return;
-            const token = localStorage.getItem('token'); // Retrieve authentication token from local storage
-            console.log(token); // Log the token value
-            const players = await axios.get(`http://localhost:8082/api/back/player-roster?userId=${currentUserId}`, {
-              headers: {
-                Authorization: `Bearer ${token}`, // Set authentication token in headers
-              },
-            }).then ((playerRoster) => {
-                setPlayerRoster(playerRoster?.data || []);
-            }).catch( (error ) => {
-                console.log(error);
-            });
-        };
+        if ( !currentUserId )
+            return;
+        const token = localStorage.getItem('token'); // Retrieve authentication token from local storage
+        console.log(token); // Log the token value
+        const players = await axios.get(`${API_BASE_URL}/player-roster?userId=${currentUserId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Set authentication token in headers
+          },
+        }).then ((rosterResponse) => {
+            setPlayers(rosterResponse?.data || []);
+        }).catch( (error ) => {
+            console.log(error);
+        });
+    };
+    useEffect(() => {
+       
 
         getRoster();
     
@@ -46,7 +52,8 @@ function HomePage () {
 
 
     const handleAddPlayer = (player) => {
-        setPlayers([...players, { id: Date.now(), ...player }]);
+       // setPlayers([...players, { id: Date.now(), ...player }]);
+       getRoster();
     };
 
     const handleEditPlayer = (player) => {
@@ -64,11 +71,31 @@ function HomePage () {
         setEditingPlayer(null);
     };
 
-    const handleDeletePlayer = (id) => {
-        const updatedPlayers = players.filter((player) => player.id !== id);
-        setPlayers(updatedPlayers);
-        setShowMessage(true);
+    const handleDeletePlayer = async (_id) => {
+
+        const playerToDelete = players.filter((player) => player._id === _id);
+        if ( playerToDelete ) {
+            const token = localStorage.getItem('token'); // Retrieve authentication token from local storage
+            const apiResponse = await axios.delete(`${API_BASE_URL}/${_id}`, {
+                headers: {
+                Authorization: `Bearer ${token}`, // Set authentication token in headers
+                }})
+                .then( (response) => {
+                    console.log(response);
+                    setPlayers(players.filter( (player) => player._id !== _id));
+                })
+                .catch( (error) => {
+                    console.log(error);
+                    //Show Error message
+                });
+        } else  {
+            // YOu are here probably the id was not found in the current roster of players
+            // you may show a messages here
+        }
     };
+
+
+
 
     const userLog = [
         {
@@ -85,10 +112,8 @@ function HomePage () {
             </div>
             <StatHead/>
             
-            <Roster players={players} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
-
-
-            <Roster players={playerRoster} onEdit={setEditingPlayer} onDelete={handleDeletePlayer} />
+            <Roster players={players} onEdit={setEditingPlayer} onDelete={(x) => handleDeletePlayer(x)} />
+            
             
             <PlayerForm onSubmit={handleAddPlayer} player={editingPlayer} onDelete={() => setShowMessage(true)} onEdit={handleEditPlayer} />
             
