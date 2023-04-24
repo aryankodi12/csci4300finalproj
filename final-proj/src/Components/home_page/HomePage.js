@@ -43,13 +43,10 @@ function HomePage () {
         });
     };
     useEffect(() => {
-       
-
         getRoster();
-    
     }, currentUserId);
     
-
+    
 
     const handleAddPlayer = (player) => {
        // setPlayers([...players, { id: Date.now(), ...player }]);
@@ -94,17 +91,16 @@ function HomePage () {
         }
     };
 
-
-
+    const playerForName = players.filter((player) => player._id == currentUserId);
 
     const userLog = [
         {
-        id: 'u1',
-        name: 'Obi Wan',
-        image:
-            'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
+        id: currentUserId,
+        name: playerForName.username,
+        image:'https://api-private.atlassian.com/users/4f5f736dffd9036ec97f3e366931bc7c/avatar'
         }
     ]
+
     return (
         <div className="wrapper">
             <div className="NavBar">
