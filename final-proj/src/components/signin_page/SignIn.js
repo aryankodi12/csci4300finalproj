@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Card from './Card.js';
 import Heading from './Heading.js';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 function SignIn() {
   const [username, setUsername] = useState('');
@@ -34,6 +35,15 @@ function SignIn() {
   };
 
 
+//-----------------
+const navigate = useNavigate();
+
+const navigateToCreateAccount = () => {
+  navigate('/create-account');
+};
+//-----------------
+
+
   return (
     <div className="signin-card">
       <Card className="signin-page">
@@ -58,7 +68,7 @@ function SignIn() {
             <button type="submit" className="app-button">
               SIGN-IN
             </button>
-            <button type="button" className="app-button">
+            <button type="button" className="app-button" onClick={navigateToCreateAccount}>
               REGISTER
             </button>
           </div>
