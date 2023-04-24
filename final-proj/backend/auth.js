@@ -48,9 +48,9 @@ router.post('/sign-in', async (req, res) => {
 
     // Create and sign JWT token
     const token = jwt.sign({ userId: user._id }, 'secret-key');
-//-----------------
+
     res.json({token, user: {id: user._id, username: user.username}});
-//-----------------
+
     res.cookie('token', token, { httpOnly: true });
     res.send('Login successful');
   } catch (error) {
@@ -59,7 +59,6 @@ router.post('/sign-in', async (req, res) => {
   }
 });
 
-//-----------------
 //CHECKING WHETHER OR NOT THE TOKEN IS VALID
 router.post("/tokenIsValid", async (req, res) => {
   try {

@@ -151,13 +151,7 @@ app.delete('/:id', async (req, res) => {
 
   try {
     const id = req.params.id;
-    // const _id = req.params._id;
-    // const token = req.authorization;
-    // const decodedToken = jwt.verify(token, 'secret-key');
-    // const userId = decodedToken.userId;
-    
-    // Find the player to delete based on the given id and the user's ID
-    // const player = await Player.findOne({ _id: id, user: userId });
+
     const player = await Player.findById(id);
     console.log(player);
     if (!player) {
@@ -213,13 +207,5 @@ app.put('/:_id', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
-
-
-
-
-
-
-
-
 
 module.exports = app;
