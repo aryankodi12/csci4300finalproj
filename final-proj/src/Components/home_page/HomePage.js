@@ -92,20 +92,22 @@ function HomePage () {
         }
     };
 
-    const playerForName = players.filter((player) => player._id == currentUserId);
 
     const userLog = [
         {
-        id: currentUserId,
-        name: playerForName.username,
-        image:'https://api-private.atlassian.com/users/4f5f736dffd9036ec97f3e366931bc7c/avatar'
+        // id: 'u1',
+        // name: 'O',
+        // image:
+        //     'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
         }
     ]
 
     return (
         <div className="wrapper">
             <div className="NavBar">
+                {/* <NavBar user_inst={userLog}/> */}
                 <NavBar user_inst={userLog}/>
+
             </div>
             <StatHead/>
             
