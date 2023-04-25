@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './EditPlayer.css'
 
 
 
@@ -49,8 +50,10 @@ function EditPlayer(props) {
   return (
     <div className="edit-form">
       {showForm && (
-        <div className="edHead">
-          <h2 className="edText">Edit Player</h2>
+        <div >
+          <div className="edHead">
+             <h2 className="edText">Edit Player</h2>
+          </div>
           <form>
             <div>
               <label htmlFor="name">Name:</label>
