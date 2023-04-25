@@ -96,20 +96,20 @@ function HomePage () {
     };
 
 
-
-
     const userLog = [
         {
-        id: 'u1',
-        name: 'Obi Wan',
-        image:
-            'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
+        // id: 'u1',
+        // name: 'O',
+        // image:
+        //     'https://i.kym-cdn.com/photos/images/original/001/701/634/8ef.jpg'
         }
     ]
     return (
         <div className="wrapper">
             <div className="NavBar">
+                {/* <NavBar user_inst={userLog}/> */}
                 <NavBar user_inst={userLog}/>
+
             </div>
             <StatHead/>
             
